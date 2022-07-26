@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 const App = () => {
   const anecdotes = [
@@ -9,24 +9,39 @@ const App = () => {
     'Premature optimization is the root of all evil.',
     'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.',
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients'
-  ]
+  ];
 
-  const [selected, setSelected] = useState(0)
+  const [selected, setSelected] = useState(0);
+  const [highest,  setHighest]  = useState(0);
+  const [points,   setPoints]   = useState(new Array(anecdotes.length).fill(0));
 
-  const randomAnecdote = () => {
+  const nextAnecdote = () => {
     const randomIndex = Math.floor(Math.random() * anecdotes.length);
     setSelected(randomIndex);
   };
 
+  const voteAnecdote = () => {
+    const copy = [...points];
+    copy[selected] += 1;
+    setPoints(copy);
 
+    if ( copy[selected] > copy[highest] ) {
+      setHighest(selected);
+    }
+  };
+  
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       <p>{anecdotes[selected]}</p>
-      <button onClick={randomAnecdote} >
-      next anecdote
-      </button>
+      <p>has {points[selected]} votes</p>
+      <button onClick={voteAnecdote} >vote</button>
+      <button onClick={nextAnecdote} >next anecdote</button>
+      <h1>Anecdote with most votes</h1>
+      <div>{anecdotes[highest]}</div>
+      <p>has {points[highest]} votes</p>
     </div>
   )
 }
 
-export default App
+export default App;

@@ -10,8 +10,15 @@ const Content = ( { parts } ) => {
   )
 }
 
-const Total = ( { parts } ) => <p>Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises}</p>
+const Total = ( { parts } ) => {
+  const total = parts.reduce( ( accum, current ) => {
+      return accum + current.exercises
+  }, 0 )
 
+  return(
+      <h3>total of {total} exercises</h3>
+  ) 
+}
 export default function Course({course}) {
     return(
         <div>

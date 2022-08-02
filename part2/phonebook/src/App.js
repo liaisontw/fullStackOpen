@@ -8,12 +8,19 @@ const App = () => {
 
   const addName = (event) => {
     event.preventDefault()
-    console.log('button clicked', event.target)
     const noteObject = {
       name: newName
     }
-    setPersons(persons.concat(noteObject))
-    setNewName('')
+    let found = false;
+    persons.forEach( person => { 
+      found = JSON.stringify( person ) === JSON.stringify( noteObject );
+    } ) ;
+    if ( found ) {
+      alert(`${newName} is already added to phonebook`);
+    } else {
+      setPersons(persons.concat(noteObject))
+      setNewName('')
+    }
   }
 
   const handleNameKeyin = (event) => {

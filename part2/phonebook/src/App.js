@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import Filter     from './components/Filter'
+import Persons    from './components/Persons'
+import PersonForm from './components/PersonForm'
 
 const App = () => {
   const [persons, setPersons] = useState([
@@ -13,77 +16,57 @@ const App = () => {
   const [ newFilter, setNewFilter ] = useState( persons );
 
   const handleNewFilter = (event) => {
-    const searchTarget = event.target.value;
-    console.log( event.target.value );
-    setNewSearch( searchTarget );
-    const filterPersons = persons.filter(
-      (person) => person.name.toLowerCase().search( searchTarget.toLowerCase() ) !== -1
-    );
-    setNewFilter(filterPersons);
+      const searchTarget = event.target.value;
+      //console.log( event.target.value );
+      setNewSearch( searchTarget );
+      const filterPersons = persons.filter(
+        (person) => person.name.toLowerCase().search( searchTarget.toLowerCase() ) !== -1
+      );
+      setNewFilter(filterPersons);
   };
-  
+
   const addPerson = (event) => {
-    event.preventDefault()
-    const noteObject = {
-      name: newName,
-      number: newNumber
-    }
-    let found = false;
-    persons.forEach( person => { 
-      found = person.name === noteObject.name;
-    } ) ;
-    if ( found ) {
-      alert(`${newName} is already added to phonebook`);
-    } else {
-      setPersons(persons.concat(noteObject));
-      setNewName('');
-      setNewNumber('');
-    }
+      event.preventDefault()
+      const noteObject = {
+          name: newName,
+          number: newNumber
+      }
+      let found = false;
+      persons.forEach( person => { 
+          found = person.name === noteObject.name;
+      } ) ;
+      if ( found ) {
+          alert(`${newName} is already added to phonebook`);
+      } else {
+          setPersons(persons.concat(noteObject));
+          setNewName('');
+          setNewNumber('');
+      }
   }
 
   const handleNameKeyin = (event) => {
-    setNewName(event.target.value)
+      setNewName(event.target.value)
   }
   const handleNumberKeyin = (event) => {
-    setNewNumber(event.target.value)
+      setNewNumber(event.target.value)
   }
-
-  //<div>debug: {newName}</div>
-
   return (
     <div>
-      
       <h2>Phonebook</h2>
-      <div>
-          filter shown with<input 
-            value={newSearch}
-            onChange={handleNewFilter}
-          />
-      </div>
+      <Filter 
+        newSearch       = {newSearch}
+        handleNewFilter = {handleNewFilter}
+      />
       <h2>add a new</h2>
-      <form onSubmit={addPerson}>
-        <div>
-          name: <input 
-            value={newName}
-            onChange={handleNameKeyin}
-          />
-        </div>
-        <div>
-          number: <input 
-            value={newNumber}
-            onChange={handleNumberKeyin}
-          />
-        </div>
-        <div>
-          <button type="submit">add</button>
-        </div>
-      </form>
+      <PersonForm
+        addPerson    = {addPerson}
+        newName      = {newName}
+        handleNameKeyin   = {handleNameKeyin}
+        newNumber    = {newNumber}
+        handleNumberKeyin = {handleNumberKeyin}
+      />
       <h2>Numbers</h2>
-      <ul>
-        {newFilter.map(person =>
-          <li key={person.name}>{person.name} {person.number}</li>
-        )}
-      </ul>
+      <Persons filter={newFilter} />
     </div>
   )
 }

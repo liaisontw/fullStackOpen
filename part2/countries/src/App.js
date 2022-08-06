@@ -36,7 +36,7 @@ const App = () => {
       <div>
           find countries <input onChange={handleQuery} value={query}></input>
       </div>
-      <ShowCountries list={list} country={country}/>
+      <ShowCountries list={list} country={country} />
     </div>
   )
 }

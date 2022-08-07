@@ -2,13 +2,11 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import ShowCountries from './components/ShowCountries';
 
-
-
 const App = () => {
   const [ countries, setCountries ] = useState([]);
   const [ query,     setQuery     ] = useState('');
   const [ list,      setList      ] = useState([]);
-  const [ country,   setCountry   ] = useState('');
+  const [ country,   setCountry   ] = useState({});
 
   useEffect(() => {    
     axios      
@@ -28,17 +26,25 @@ const App = () => {
     setList(filterCountries);
     if ( 1 === filterCountries.length ) {
       setCountry(filterCountries[0]);
-    }
+    } 
   }
-
+ 
   return (
     <div>
-      <div>
+      <p>
           find countries <input onChange={handleQuery} value={query}></input>
+      </p>
+      { 
+        ( 10 < list.length ) ? ( <p>Too many matches, specify another filter</p> ) 
+          : (list.map(country =>
+            <p key={country.name.common}>{country.name.common}
+            <button onClick={() => setCountry(country) }>show</button>
+            </p>
+        ))  
+      }
+      { country.name && <ShowCountries country={country} />}
       </div>
-      <ShowCountries list={list} country={country} />
-    </div>
   )
 }
 
-export default App
+export default App;

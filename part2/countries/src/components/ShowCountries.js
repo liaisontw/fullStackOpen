@@ -10,15 +10,18 @@ const ShowCountries = ({country}) => {
     const languages = country.languages;
     const flag      = country.flags.png;
 
-    const [weather, setWeather] = useState({});
+    const [ weather,     setWeather     ] = useState({});
+    const [ weatherIcon, setWeatherIcon ] = useState("");
 
     useEffect(() => {
         axios
         .get(
-            `https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=${api_key}`
+            `https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=${api_key}&units=metric`
         )
         .then((response) => {
             setWeather(response.data);
+            let icon = "http://openweathermap.org/img/wn/"+response.data.weather[0].icon+"@2x.png";
+            setWeatherIcon(icon);
         });
     }, [capital]);
     
@@ -34,16 +37,15 @@ const ShowCountries = ({country}) => {
             <img src={flag} alt={name} width="150px" />
             {Object.keys(weather).length !== 0 && (
                 <>
-                <h2>Weather in {capital}</h2>
-                <p>temperature {weather.main.temp} Celcius</p>
-                <p>{weather.weather.description}</p>
-                {/* <img
-                    src={weather.weather.icon}
-                    alt={weather.weather.description}
-                /> */}
-                <p>
-                    wind {weather.wind.speed} meter/sec 
-                </p>
+                    <h2>Weather in {capital}</h2>
+                    <p>temperature {weather.main.temp} Celcius</p>
+                    <img
+                        src={weatherIcon}
+                        alt={weather.weather[0].description}
+                    />
+                    <p>
+                        wind {weather.wind.speed} m/s 
+                    </p>
                 </>
             )}
 

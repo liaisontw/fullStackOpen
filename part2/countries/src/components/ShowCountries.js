@@ -20,7 +20,7 @@ const ShowCountries = ({country}) => {
         )
         .then((response) => {
             setWeather(response.data);
-            let icon = "http://openweathermap.org/img/wn/"+response.data.weather[0].icon+"@2x.png";
+            let icon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
             setWeatherIcon(icon);
         });
     }, [capital]);

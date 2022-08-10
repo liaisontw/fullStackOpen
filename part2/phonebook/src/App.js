@@ -36,19 +36,24 @@ const App = () => {
           name: newName,
           number: newNumber
       }
-      let found = false;
+      // let found = false;
       
-      persons.forEach( person => { 
-          found = person.name === noteObject.name;
-      } ) ;
-      if ( found ) {
-          alert(`${newName} is already added to phonebook`);
+      // persons.forEach( person => { 
+      //     found = person.name === noteObject.name;
+      // } ) ;
+      const currentPerson = persons.filter((person) => person.name === noteObject.name);
+      
+      if ( currentPerson.length === 1 ) {
+          alert(`${currentPerson[0].name} is already added to phonebook`);
       } else {
-          let newPersons = persons.concat(noteObject);
-          setPersons(newPersons);
-          setNewFilter(newPersons);
-          setNewName('');
-          setNewNumber('');
+          axios    
+            .post('http://localhost:3001/persons', noteObject)    
+            .then(response => {      
+              console.log(response);
+              let newPersons = persons.concat(response);    
+              setPersons(newPersons);
+              setNewFilter(newPersons);
+            })
       }
   }
 

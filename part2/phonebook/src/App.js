@@ -37,13 +37,16 @@ const App = () => {
           number: newNumber
       }
       let found = false;
+      
       persons.forEach( person => { 
           found = person.name === noteObject.name;
       } ) ;
       if ( found ) {
           alert(`${newName} is already added to phonebook`);
       } else {
-          setPersons(persons.concat(noteObject));
+          let newPersons = persons.concat(noteObject);
+          setPersons(newPersons);
+          setNewFilter(newPersons);
           setNewName('');
           setNewNumber('');
       }

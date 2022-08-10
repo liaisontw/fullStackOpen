@@ -22,7 +22,6 @@ const App = () => {
 
   const handleNewFilter = (event) => {
       const searchTarget = event.target.value;
-      //console.log( event.target.value );
       setNewSearch( searchTarget );
       const filterPersons = persons.filter(
         (person) => person.name.toLowerCase().search( searchTarget.toLowerCase() ) !== -1
@@ -36,11 +35,6 @@ const App = () => {
           name: newName,
           number: newNumber
       }
-      // let found = false;
-      
-      // persons.forEach( person => { 
-      //     found = person.name === noteObject.name;
-      // } ) ;
       const currentPerson = persons.filter((person) => person.name === noteObject.name);
       
       if ( currentPerson.length === 1 ) {
@@ -49,8 +43,7 @@ const App = () => {
           axios    
             .post('http://localhost:3001/persons', noteObject)    
             .then(response => {      
-              console.log(response);
-              let newPersons = persons.concat(response);    
+              const newPersons = persons.concat(response.data);    
               setPersons(newPersons);
               setNewFilter(newPersons);
             })

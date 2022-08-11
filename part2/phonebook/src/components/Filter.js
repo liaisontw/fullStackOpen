@@ -1,5 +1,5 @@
 
-export default function Filter( {newSearch, handleNewFilter}) {
+const Filter =( {newSearch, handleNewFilter} ) =>  {
     return(
         <div>
             filter shown with<input 
@@ -7,5 +7,7 @@ export default function Filter( {newSearch, handleNewFilter}) {
                 onChange={handleNewFilter}
             />
         </div>
-    )
+    );
 }
+
+export default Filter;

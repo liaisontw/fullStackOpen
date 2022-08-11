@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import Filter     from './components/Filter'
 import Persons    from './components/Persons'
 import PersonForm from './components/PersonForm'
+import personService from './services/persons'
 
 const App = () => {
   const [ persons,   setPersons   ] = useState([]);
@@ -12,17 +12,16 @@ const App = () => {
   const [ newFilter, setNewFilter ] = useState( persons );
 
   useEffect(() => {    
-    axios      
-      .get('http://localhost:3001/persons')      
-      .then(response => {        
-        setPersons(response.data)
-        setNewFilter(response.data)      
+    personService      
+      .getAll()
+      .then(initPersons => {        
+        setPersons(initPersons)
+        setNewFilter(initPersons)      
       })  
   }, [])  
 
   const handleNewFilter = (event) => {
       const searchTarget = event.target.value;
-      //console.log( event.target.value );
       setNewSearch( searchTarget );
       const filterPersons = persons.filter(
         (person) => person.name.toLowerCase().search( searchTarget.toLowerCase() ) !== -1
@@ -32,25 +31,19 @@ const App = () => {
 
   const addPerson = (event) => {
       event.preventDefault()
-      const noteObject = {
+      const newObject = {
           name: newName,
           number: newNumber
       }
-      // let found = false;
-      
-      // persons.forEach( person => { 
-      //     found = person.name === noteObject.name;
-      // } ) ;
-      const currentPerson = persons.filter((person) => person.name === noteObject.name);
+      const currentPerson = persons.filter((person) => person.name === newObject.name);
       
       if ( currentPerson.length === 1 ) {
           alert(`${currentPerson[0].name} is already added to phonebook`);
       } else {
-          axios    
-            .post('http://localhost:3001/persons', noteObject)    
-            .then(response => {      
-              console.log(response);
-              let newPersons = persons.concat(response);    
+        personService    
+            .create(newObject)    
+            .then(resNewPersons => {      
+              const newPersons = persons.concat(resNewPersons);    
               setPersons(newPersons);
               setNewFilter(newPersons);
             })

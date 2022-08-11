@@ -1,6 +1,6 @@
-export default function PersonForm({addPerson, 
-                                    newName,   handleNameKeyin, 
-                                    newNumber, handleNumberKeyin}) {
+const PersonForm = ( { addPerson, 
+                       newName,   handleNameKeyin, 
+                       newNumber, handleNumberKeyin } ) => {
     return(
         <form onSubmit={addPerson}>
             <div>
@@ -21,3 +21,5 @@ export default function PersonForm({addPerson,
         </form>
     )
 }
+
+export default PersonForm;

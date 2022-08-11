@@ -41,14 +41,27 @@ const App = () => {
           alert(`${currentPerson[0].name} is already added to phonebook`);
       } else {
         personService    
-            .create(newObject)    
-            .then(resNewPersons => {      
+            .create( newObject )    
+            .then( resNewPersons => {      
               const newPersons = persons.concat(resNewPersons);    
               setPersons(newPersons);
               setNewFilter(newPersons);
             })
       }
   }
+
+  const deletePerson = ( { id, name } ) => {
+    if ( window.confirm( `Are you sure to delete ${name} from the phonebook ?` ) ) {
+      personService
+        .deletePerson( id )
+        .then( () => {
+          const newPersons = persons.filter( ( person ) => person.id !== id );
+          setPersons( newPersons );
+          setNewFilter( newPersons );
+        } )
+    }
+  };
+
 
   const handleNameKeyin = (event) => {
       setNewName(event.target.value)
@@ -73,7 +86,7 @@ const App = () => {
         handleNumberKeyin = {handleNumberKeyin}
       />
       <h2>Numbers</h2>
-      <Persons filter={newFilter} />
+      <Persons filter={newFilter} deletePerson={deletePerson} />
     </div>
   )
 }

@@ -38,15 +38,27 @@ const App = () => {
       const currentPerson = persons.filter((person) => person.name === newObject.name);
       
       if ( currentPerson.length === 1 ) {
-          alert(`${currentPerson[0].name} is already added to phonebook`);
+        if ( window.confirm (
+              `${currentPerson[0].name} is already added to phonebook, replace the old number with a new one?`
+        ) ) {
+          personService    
+          .update( currentPerson[0].id, newObject )    
+          .then( ( resPerson ) => {
+            const newPersons = persons.map( ( person ) =>
+              person.id !== resPerson.id ? person : resPerson
+            );
+            setPersons(newPersons);
+            setNewFilter(newPersons);
+          })
+        } 
       } else {
         personService    
-            .create( newObject )    
-            .then( resNewPersons => {      
-              const newPersons = persons.concat(resNewPersons);    
-              setPersons(newPersons);
-              setNewFilter(newPersons);
-            })
+          .create( newObject )    
+          .then( resNewPerson => {      
+            const newPersons = persons.concat(resNewPerson);    
+            setPersons(newPersons);
+            setNewFilter(newPersons);
+          })
       }
   }
 

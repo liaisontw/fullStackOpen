@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Filter     from './components/Filter'
 import Persons    from './components/Persons'
 import PersonForm from './components/PersonForm'
+import Notification from './components/Notification'
 import personService from './services/persons'
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
   const [ newName,   setNewName   ] = useState( '' );
   const [ newNumber, setNewNumber ] = useState( '' );
   const [ newSearch, setNewSearch ] = useState( '' );
+  const [ message,   setMessage   ] = useState( null );
   const [ newFilter, setNewFilter ] = useState( persons );
 
   useEffect(() => {    
@@ -41,15 +43,19 @@ const App = () => {
         if ( window.confirm (
               `${currentPerson[0].name} is already added to phonebook, replace the old number with a new one?`
         ) ) {
-          personService    
+          personService     
           .update( currentPerson[0].id, newObject )    
           .then( ( resPerson ) => {
             const newPersons = persons.map( ( person ) =>
               person.id !== resPerson.id ? person : resPerson
             );
-            setPersons(newPersons);
-            setNewFilter(newPersons);
-          })
+            setPersons( newPersons );
+            setNewFilter( newPersons );
+            setMessage({ text: `Updated ${resPerson.name}`, success: true } );
+          } )
+          .catch((error) => {
+            setMessage( { text: `${newName} was already removed from server`, success: false } );
+          });
         } 
       } else {
         personService    
@@ -58,7 +64,11 @@ const App = () => {
             const newPersons = persons.concat(resNewPerson);    
             setPersons(newPersons);
             setNewFilter(newPersons);
-          })
+            setMessage({ text: `Added ${newName}`, success: true });
+          } )
+          .catch((error) => {
+            setMessage({text: error.response.data.error, success: false } );
+          } );
       }
   }
 
@@ -85,6 +95,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message = {message}  setMessage = {setMessage} />
       <Filter 
         newSearch       = {newSearch}
         handleNewFilter = {handleNewFilter}

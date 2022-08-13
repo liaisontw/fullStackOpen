@@ -54,7 +54,7 @@ const App = () => {
             setMessage({ text: `Updated ${resPerson.name}`, success: true } );
           } )
           .catch((error) => {
-            setMessage( { text: `${newName} was already removed from server`, success: false } );
+            setMessage( { text: `Information of ${newName} has already been removed from server`, success: false } );
           });
         } 
       } else {

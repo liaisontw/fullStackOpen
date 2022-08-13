@@ -80,7 +80,11 @@ const App = () => {
           const newPersons = persons.filter( ( person ) => person.id !== id );
           setPersons( newPersons );
           setNewFilter( newPersons );
+          setMessage({ text: `Delete ${name}`, success: true } );
         } )
+        .catch((error) => {
+          setMessage( { text: `Information of ${name} has already been removed from server`, success: false } );
+        });
     }
   };
 

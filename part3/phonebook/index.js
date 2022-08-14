@@ -23,25 +23,37 @@ let persons = [
       "number": "39-23-6423122"
     }
 ]
-
  
 app.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
 })
 
+app.get('/info', (request, response) => {
+  const count = persons.length;
+  let   date  = new Date();
+  const res = `
+  <p>Phonebook has info for ${count} people</p>
+  <p>${date}</p>
+  `
+  response.send(res)
+})
+
+
 app.get('/api/persons', (request, response) => {
   response.json(persons)
 })
 
-app.get('/info', (request, response) => {
-    const count = persons.length;
-    let   date  = new Date();
-    const res = `
-    <p>Phonebook has info for ${count} people</p>
-    <p>${date}</p>
-    `
-    response.send(res)
-  })
+app.get('/api/persons/:id', (request, response) => {
+  const id = Number(request.params.id)
+  const person = persons.find(person => person.id === id)
+
+  if (person) {
+    response.json(person)
+  } else {
+    response.status(404).end()
+  }
+})
+
 
 const PORT = 3001
 app.listen(PORT, () => {

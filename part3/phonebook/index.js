@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.use(express.json())
 
 let persons = [
     {
@@ -59,6 +60,26 @@ app.delete('/api/persons/:id', (request, response) => {
   persons = persons.filter(person => person.id !== id)
 
   response.status(204).end()
+})
+
+app.post('/api/persons', (request, response) => {
+  let newOne = request.body;
+  if (!newOne.name || !newOne.number) {
+    return response.status(400).json({
+      error: 'The name or number can not be null',
+    })
+  }
+  const isExisting = persons.filter((list) => list.name === newOne.name);
+  if (1 === isExisting.length) {
+    return response.status(400).json({
+      error: 'name must be unique' 
+    })
+  } else {
+    newOne.id = Math.floor(Math.random() * 1000);
+  }
+
+  console.log(newOne)
+  response.json(newOne)
 })
 
 

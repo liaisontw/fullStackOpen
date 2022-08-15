@@ -1,6 +1,12 @@
 const express = require('express')
+const morgan  = require('morgan')
 const app = express()
 app.use(express.json())
+morgan.token('custom', (request) => {
+  return 'POST' === request.method ? JSON.stringify(request.body) : ' '
+})
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :custom'))
+
 
 let persons = [
     {
@@ -78,7 +84,7 @@ app.post('/api/persons', (request, response) => {
     newOne.id = Math.floor(Math.random() * 1000);
   }
 
-  console.log(newOne)
+  //console.log(newOne)
   response.json(newOne)
 })
 

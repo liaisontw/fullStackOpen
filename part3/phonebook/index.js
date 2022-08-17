@@ -10,7 +10,7 @@ morgan.token('custom', (request) => {
   return 'POST' === request.method ? JSON.stringify(request.body) : ' '
 })
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :custom'))
-
+app.use(express.static('build'))
 
 let persons = [
     {

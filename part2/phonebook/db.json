@@ -19,6 +19,34 @@
       "name": "Mary Poppendieck",
       "number": "39-23-6423122",
       "id": 4
+<<<<<<< HEAD
+=======
+    },
+    {
+      "name": "donald",
+      "number": "123",
+      "id": 5
+    },
+    {
+      "name": "trump",
+      "number": "456",
+      "id": 6
+    },
+    {
+      "name": "steven",
+      "number": "123",
+      "id": 8
+    },
+    {
+      "name": "aaa",
+      "number": "456",
+      "id": 9
+    },
+    {
+      "name": "test",
+      "number": "123",
+      "id": 10
+>>>>>>> e05ba925e563f418da80610fa92934c4b48580f3
     }
   ]
 }

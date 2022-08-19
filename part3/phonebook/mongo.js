@@ -8,25 +8,32 @@ if (process.argv.length < 3) {
 const password = process.argv[2]
 
 const url =
-  `mongodb+srv://mongodbcluster:${password}@cluster0.dpksglo.mongodb.net/?retryWrites=true&w=majority`
+  `mongodb+srv://mongodbcluster:${password}@cluster0.dpksglo.mongodb.net/test2?retryWrites=true&w=majority`
 
 mongoose.connect(url)
 
-const noteSchema = new mongoose.Schema({
-  content: String,
-  date: Date,
-  important: Boolean,
+const personSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    minlength: 3,
+    required: true,
+  },
+  number: {
+    type: String,
+    minlength: 8,
+    required: true,
+  },
 })
 
-const Note = mongoose.model('Note', noteSchema)
+const Person = mongoose.model('Person', personSchema)
 
-const note = new Note({
-  content: 'HTML is Easy',
-  date: new Date(),
-  important: true,
+const person = new Person({
+  name: 'Ada Lovelace',
+  number: '040-1231236',
 })
 
-note.save().then(result => {
-  console.log('note saved!')
+person.save().then(result => {
+  console.log(`added ${person.name} number ${person.number} to phonebook`)
   mongoose.connection.close()
 })
+

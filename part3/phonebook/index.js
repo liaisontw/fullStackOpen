@@ -1,4 +1,5 @@
 //https://fso-part3phonebook-liaison.herokuapp.com/
+require('dotenv').config()
 const express = require('express')
 const morgan  = require('morgan')
 const app = express()
@@ -34,13 +35,15 @@ let persons = [
       "number": "39-23-6423122"
     }
 ]
- 
+
+const Person = require('./models/Person')
+
 app.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
 })
 
 app.get('/info', (request, response) => {
-  const count = persons.length;
+  const count = Person.length;
   let   date  = new Date();
   const res = `
   <p>Phonebook has info for ${count} people</p>
@@ -51,26 +54,30 @@ app.get('/info', (request, response) => {
 
 
 app.get('/api/persons', (request, response) => {
-  response.json(persons)
+  Person.find({}).then(people => {
+    response.json(people)
+  })
 })
 
 app.get('/api/persons/:id', (request, response) => {
   const id = Number(request.params.id)
-  const person = persons.find(person => person.id === id)
+  const theOne = Person.find(list => list.id === id)
 
-  if (person) {
-    response.json(person)
+  if (theOne) {
+    response.json(theOne)
   } else {
     response.status(404).end()
   }
 })
 
+/* 
 app.delete('/api/persons/:id', (request, response) => {
   const id = Number(request.params.id)
-  persons = persons.filter(person => person.id !== id)
+  persons = Person.filter(list => list.id !== id)
 
   response.status(204).end()
 })
+*/
 
 app.post('/api/persons', (request, response) => {
   let newOne = request.body;
@@ -79,7 +86,8 @@ app.post('/api/persons', (request, response) => {
       error: 'The name or number can not be null',
     })
   }
-  const isExisting = persons.filter((list) => list.name === newOne.name);
+  /*
+  const isExisting = Person.filter((list) => list.name === newOne.name);
   if (1 === isExisting.length) {
     return response.status(400).json({
       error: 'name must be unique' 
@@ -87,12 +95,12 @@ app.post('/api/persons', (request, response) => {
   } else {
     newOne.id = Math.floor(Math.random() * 1000);
   }
-
+  */
   response.json(newOne)
 })
 
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })

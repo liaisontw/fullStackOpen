@@ -80,23 +80,20 @@ app.delete('/api/persons/:id', (request, response) => {
 */
 
 app.post('/api/persons', (request, response) => {
-  let newOne = request.body;
-  if (!newOne.name || !newOne.number) {
-    return response.status(400).json({
-      error: 'The name or number can not be null',
-    })
+  const body = request.body
+
+  if ( (body.name === undefined) || (body.number === undefined) ) {
+    return response.status(400).json({ error: 'content missing' })
   }
-  /*
-  const isExisting = Person.filter((list) => list.name === newOne.name);
-  if (1 === isExisting.length) {
-    return response.status(400).json({
-      error: 'name must be unique' 
-    })
-  } else {
-    newOne.id = Math.floor(Math.random() * 1000);
-  }
-  */
-  response.json(newOne)
+
+  const theOne = new Person({
+    name: body.name,
+    number: body.number,
+  })
+
+  theOne.save().then(savedPerson => {
+    response.json(savedPerson)
+  })
 })
 
 

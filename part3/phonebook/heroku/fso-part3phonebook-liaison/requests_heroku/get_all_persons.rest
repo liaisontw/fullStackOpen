@@ -1,0 +1,1 @@
+GET https://fso-part3phonebook-liaison.herokuapp.com/api/persons

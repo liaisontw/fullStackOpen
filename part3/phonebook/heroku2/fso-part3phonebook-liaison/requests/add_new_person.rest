@@ -1,7 +1,0 @@
-POST http://localhost:3001/api/persons/ 
-content-type: application/json
-
-{
-    "name": "Donald Trump",
-    "number": "99-00-1234567"
-}

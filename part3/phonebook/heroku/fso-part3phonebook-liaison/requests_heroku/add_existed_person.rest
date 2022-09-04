@@ -1,7 +1,0 @@
-POST https://fso-part3phonebook-liaison.herokuapp.com/api/persons
-content-type: application/json
-
-{
-    "name": "Mary Poppendieck",
-    "number": "39-23-6423122"
-}

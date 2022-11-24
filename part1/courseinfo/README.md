@@ -7,20 +7,21 @@ eg. the project unicafe for exercises 1.6.-1.11 as folder unicafe
 - 1.1  : course information, step1
 - index.js as
 ----------------------------------------------------------------------
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+>import React from 'react'
 
-import App from './App'
+>import ReactDOM from 'react-dom/client'
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+>import App from './App'
+
+>ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
 ----------------------------------------------------------------------
 - App.js as
 ----------------------------------------------------------------------
-const App = () => {
-  // const-definitions
+>const App = () => {
+>  // const-definitions
 
-  return (
+>  return (
   
     <div>
       <Header course\={course} />
@@ -28,16 +29,16 @@ const App = () => {
       <Total ... />
     </div>
     
-  )
-}
+>  )
+>}
 
 ----------------------------------------------------------------------
 - 1.2  : course information, step2
 - App.js as
 ----------------------------------------------------------------------
-const Content = ... {
+>const Content = ... {
 
-  return (
+>  return (
   
     <div>
       <Part .../>
@@ -45,8 +46,8 @@ const Content = ... {
       <Part .../>
     </div>
   
-  )
-}
+>  )
+>}
 
 ----------------------------------------------------------------------
 - b: Javascript

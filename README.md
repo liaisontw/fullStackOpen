@@ -32,7 +32,7 @@
 - 0.5  : Single page app
 - 0.6  : New note
 
-### Part 1: Introduction to React
+### [Part 1: Introduction to React](https://github.com/liaisontw/fullStackOpen/tree/main/part1)
 
 - a: Introduction to React
 - b: Javascript

@@ -20,7 +20,7 @@
 
 ## Course content
 
-### [Part 0: Fundamentals of Web apps] (https://github.com/liaisontw/fullStackOpen/blob/main/part0/README.md)
+### [Part 0: Fundamentals of Web apps](https://github.com/liaisontw/fullStackOpen/blob/main/part0/README.md)
 
 - a: General info
 - b: Fundamentals of Web apps

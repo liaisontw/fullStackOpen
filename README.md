@@ -20,7 +20,7 @@
 
 ## Course content
 
-### Part 0: Fundamentals of Web apps (https://fullstackopen.com/en/part0/fundamentals_of_web_apps)
+### Part 0: Fundamentals of Web apps (https://fullstackopen.com/en/ 'Full Stack Open 2022 Homepage')
 
 - a: General info
 - b: Fundamentals of Web apps

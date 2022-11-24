@@ -21,16 +21,34 @@ const App = () => {
   // const-definitions
 
   return (
+  
     <div>
       <Header course\={course} />
       <Content ... />
       <Total ... />
     </div>
+    
   )
 }
 
 ----------------------------------------------------------------------
 - 1.2  : course information, step2
+- App.js as
+----------------------------------------------------------------------
+const Content = ... {
+
+  return (
+  
+    <div>
+      <Part .../>
+      <Part .../>
+      <Part .../>
+    </div>
+  
+  )
+}
+
+----------------------------------------------------------------------
 - b: Javascript
 - Exercises
 - 1.3  : course information, step3

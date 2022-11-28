@@ -2,7 +2,7 @@ Solutions of part 1 exercises to this folder, one app per folder
 
 eg. the project unicafe for exercises 1.6.-1.11 as folder unicafe
 
-- a: Introduction to React
+- [a: Introduction to React](https://fullstackopen.com/en/part1/introduction_to_react)
 - Exercises
 - 1.1  : course information, step1
 - index.js as

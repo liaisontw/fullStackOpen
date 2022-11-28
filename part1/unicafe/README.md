@@ -2,7 +2,7 @@
    - Exercises
    - 1.6  : unicafe step1
      - index.js as
->----------------------------------------------------------------------
+
 >
 >import React from 'react'
 >
@@ -12,7 +12,7 @@
 >
 >ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 > 
->----------------------------------------------------------------------
+
   - App.js as
 ----------------------------------------------------------------------
 >import { useState } from 'react'

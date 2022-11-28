@@ -5,7 +5,7 @@ eg. the project unicafe for exercises 1.6.-1.11 as folder unicafe
 - [a: Introduction to React](https://fullstackopen.com/en/part1/introduction_to_react)
 - Exercises
 - 1.1  : course information, step1
-- index.js as
+  - index.js as
 ----------------------------------------------------------------------
 
 >import React from 'react'
@@ -18,7 +18,7 @@ eg. the project unicafe for exercises 1.6.-1.11 as folder unicafe
 
   
 ----------------------------------------------------------------------
-- App.js as
+  - App.js as
 ----------------------------------------------------------------------
 >const App = () => {
 >  // const-definitions

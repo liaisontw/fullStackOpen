@@ -61,4 +61,19 @@
 
    - 1.9  : unicafe step4
    - 1.10 : unicafe step5
+
+>const Statistics = (props) => {
+>
+>  return(
+
+    <div>
+      <StatisticLine text="good" value ={...} />
+      <StatisticLine text="neutral" value ={...} />
+      <StatisticLine text="bad" value ={...} />
+      // ...
+    </div>
+
+>   )
+>}
+
    - 1.11*: unicafe step6

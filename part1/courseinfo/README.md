@@ -7,6 +7,7 @@ eg. the project unicafe for exercises 1.6.-1.11 as folder unicafe
 - 1.1  : course information, step1
 - index.js as
 ----------------------------------------------------------------------
+*
 >import React from 'react'
 
 >import ReactDOM from 'react-dom/client'
@@ -14,7 +15,7 @@ eg. the project unicafe for exercises 1.6.-1.11 as folder unicafe
 >import App from './App'
 
 >ReactDOM.createRoot(document.getElementById('root')).render(<App />)
-
+*
 ----------------------------------------------------------------------
 - App.js as
 ----------------------------------------------------------------------

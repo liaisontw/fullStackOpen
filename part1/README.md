@@ -2,9 +2,10 @@ Solutions of part 1 exercises to this folder, one app per folder
 
 eg. the project unicafe for exercises 1.6.-1.11 as folder unicafe
 
-- a: Introduction to React
-- Exercises
-- 1.1  : course information, step1
+- [courseinfo](./courseinfo/README.md)
+   - a: Introduction to React
+   - Exercises
+   - 1.1  : course information, step1
 - 1.2  : course information, step2
 - b: Javascript
 - Exercises

@@ -8,12 +8,11 @@ eg. the project unicafe for exercises 1.6.-1.11 as folder unicafe
 - index.js as
 ----------------------------------------------------------------------
 
-<code>
-import React from 'react'
+*import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
-</code>
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)*
+
   
 ----------------------------------------------------------------------
 - App.js as

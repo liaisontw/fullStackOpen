@@ -52,7 +52,7 @@ eg. the project unicafe for exercises 1.6.-1.11 as folder unicafe
 >}
 
 ----------------------------------------------------------------------
-- b: Javascript
+- [b: Javascript](https://fullstackopen.com/en/part1/java_script)
 - Exercises (Modify constant format in \<App/\> )
 - 1.3  : course information, step3
 - 1.4  : course information, step4

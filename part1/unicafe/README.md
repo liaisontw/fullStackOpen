@@ -3,16 +3,15 @@
    - 1.6  : unicafe step1
      - index.js as
 ----------------------------------------------------------------------
-
+>
 >import React from 'react'
-
+>
 >import ReactDOM from 'react-dom/client'
-
+>
 >import App from './App'
-
+>
 >ReactDOM.createRoot(document.getElementById('root')).render(<App />)
-
-  
+> 
 ----------------------------------------------------------------------
   - App.js as
 ----------------------------------------------------------------------

@@ -1,7 +1,7 @@
 ### [Part 2: Communicating with server](../../tree/main/part2)
 
 - a: Rendering a collection, modules
-- [courseinfo](https://github.com/liaisontw/fullStackOpen/tree/main/part2/courseinfo)
+- [courseinfo](../../../tree/main/part2/courseinfo)
 - 2.1  : Course information step6
 - 2.2  : Course information step7
 - 2.3* : Course information step8

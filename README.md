@@ -20,7 +20,7 @@
 
 ## Course content
 
-### [Part 0: Fundamentals of Web apps](https://github.com/liaisontw/fullStackOpen/blob/main/part0/README.md)
+### [Part 0: Fundamentals of Web apps](../../tree/main/part0/)
 
 - a: General info
 - b: Fundamentals of Web apps
@@ -32,7 +32,7 @@
 - 0.5  : Single page app
 - 0.6  : New note
 
-### [Part 1: Introduction to React](https://github.com/liaisontw/fullStackOpen/tree/main/part1)
+### [Part 1: Introduction to React](../../tree/main/part1)
 
 - a: Introduction to React
 - b: Javascript

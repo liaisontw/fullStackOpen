@@ -48,4 +48,5 @@ import { useState } from 'react'
 >export default App
 
    - 1.13*: anecdotes step2
+[Expand your application so that you can vote for the displayed anecdote.](./19a.png)
    - 1.14*: anecdotes step3

@@ -55,7 +55,7 @@
 - 1.14*: anecdotes step3
 
 
-### [Part 2: Communicating with server](../part2)
+### [Part 2: Communicating with server](../../../tree/main/part2)
 
 - a: Rendering a collection, modules
 - 2.1  : Course information step6

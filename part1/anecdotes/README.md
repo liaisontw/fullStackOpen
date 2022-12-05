@@ -50,4 +50,20 @@ import { useState } from 'react'
    - 1.13*: anecdotes step2
    
 ![Expand your application so that you can vote for the displayed anecdote.](./19a.png)
+
+>const voteAnecdote = () => {
+>
+>    const copy = [...points];
+>
+>    copy[selected] += 1;
+>
+>    setPoints(copy);
+>
+>    if ( copy[selected] > copy[highest] ) {
+>
+>      setHighest(selected);
+>
+>    }
+>
+>  };
    - 1.14*: anecdotes step3

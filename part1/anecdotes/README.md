@@ -67,3 +67,5 @@ import { useState } from 'react'
 >
 >  };
    - 1.14*: anecdotes step3
+
+![displays the anecdote with the largest number of votes.](./20a.png)

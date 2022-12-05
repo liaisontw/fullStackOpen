@@ -3,6 +3,19 @@
 - a: Rendering a collection, modules
 - [courseinfo](../../../tree/main/part2/courseinfo)
 - 2.1  : Course information step6
+
+Define a component responsible for formatting a single course called Course. 
+
+>const App = () => {
+>
+>...
+>
+>  return (
+>    courses.map((course) => <Course course={course} /> )
+>  )
+>}
+
+
 - 2.2  : Course information step7
 - 2.3* : Course information step8
 - 2.4  : Course information step9

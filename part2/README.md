@@ -72,6 +72,9 @@ Refactor the application by extracting suitable parts into new components.
 - c: Getting data from server
 - [Phonebook](../../../tree/main/part2/phonebook)
 - 2.11 : The Phonebook Step6
+
+Start json-server on port 3001 and make sure that the server returns the list of people by going to the address http://localhost:3001/persons in the browser.
+
 - [countries](../../../tree/main/part2/countries)
 - 2.12*: Data for countries, step1
 - 2.13*: Data for countries, step2

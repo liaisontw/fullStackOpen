@@ -46,7 +46,7 @@ Declare the Course component as a separate module, which is imported by the App 
 - [Phonebook](../../../tree/main/part2/phonebook)
 - 2.6  : The Phonebook Step1
 
-(https://github.com/liaisontw/fullStackOpen/blob/main/part2/fsoPart2Form.png)
+[](./fsoPart2Form.png)
 
 - 2.7  : The Phonebook Step2
 - 2.8  : The Phonebook Step3

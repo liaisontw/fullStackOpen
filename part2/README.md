@@ -45,22 +45,27 @@ Declare the Course component as a separate module, which is imported by the App 
 - b: Forms
 - [Phonebook](../../../tree/main/part2/phonebook)
 - 2.6  : The Phonebook Step1
+
 Implement the addition of a person (name only) to phonebook.
 ![test](./fsoPart2Form.png)
 
 - 2.7  : The Phonebook Step2
+
 Issue a warning with the alert command when such an action is attempted:
 ![test](./10e.png)
 
 - 2.8  : The Phonebook Step3
+
 Expand your application by allowing users to add phone numbers to the phone book. You will need to add a second input element to the form:
 ![test](./11e.png)
 
 - 2.9* : The Phonebook Step4
+
 Implement a search field that can be used to filter the list of people by name:
 ![test](./12e.png)
 
 - 2.10 : The Phonebook Step5
+
 Refactor the application by extracting suitable parts into new components.
 ![test](./fsoPart2Form_1.png)
 

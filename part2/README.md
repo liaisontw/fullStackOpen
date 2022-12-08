@@ -82,13 +82,45 @@ Start json-server on port 3001 and make sure that the server returns the list of
 
 - d: Altering data in server
 - [Phonebook](../../../tree/main/part2/phonebook)
+
+in src/service/persons.js
+
+export default { getAll, create, update, deletePerson };
+
 - 2.15 : Phonebook step7
+
+Save the numbers that are added to the phonebook to a backend server.
+
 - 2.16 : Phonebook step8
+
+Extract the code that handles the communication with the backend into its own module.
+
 - 2.17 : Phonebook step9
+
+Make it possible for users to delete entries from the phonebook. The deletion can be done through a dedicated button for each person in the phonebook list.
+
 - 2.18*: Phonebook step10
+
+Change the functionality so that if a number is added to an already existing user, the new number will replace the old number. 
 
 - e: Adding styles to React app
 - [Phonebook](../../../tree/main/part2/phonebook)
+
+src/components/Notification.js
+
+> const noteStyle = {
+>
+>color: message.success ? 'green' : 'red', 
+>
+> ...
+>
+>    }
+    
 - 2.19 : Phonebook step11
+
+![test](./27e.png)
+
 - 2.20*: Phonebook step12
+
+![test](./28e.png)
 

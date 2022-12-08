@@ -5,10 +5,10 @@
 
 | Part      | Exercises Done |
 | --------- | -------------- |
-| 0         |      /6        |
-| 1         |      /14       |
-| 2         |      /20       |
-| 3         |      /22       |
+| 0         |     6/6        |
+| 1         |    14/14       |
+| 2         |    20/20       |
+| 3         |    22/22       |
 | 4         |      /22       |
 | 5         |      /22       |
 | 6         |      /21       |
@@ -20,7 +20,7 @@
 
 ## Course content
 
-### Part 0: Fundamentals of Web apps
+### [Part 0: Fundamentals of Web apps](../../tree/main/part0/)
 
 - a: General info
 - b: Fundamentals of Web apps
@@ -32,7 +32,7 @@
 - 0.5  : Single page app
 - 0.6  : New note
 
-### Part 1: Introduction to React
+### [Part 1: Introduction to React](../../tree/main/part1)
 
 - a: Introduction to React
 - b: Javascript
@@ -55,13 +55,37 @@
 - 1.14*: anecdotes step3
 
 
-### Part 2: Communicating with server
+### [Part 2: Communicating with server](../../tree/main/part2)
 
 - a: Rendering a collection, modules
+- 2.1  : Course information step6
+- 2.2  : Course information step7
+- 2.3* : Course information step8
+- 2.4  : Course information step9
+- 2.5  : separate module
+
 - b: Forms
+- 2.6  : The Phonebook Step1
+- 2.7  : The Phonebook Step2
+- 2.8  : The Phonebook Step3
+- 2.9* : The Phonebook Step4
+- 2.10 : The Phonebook Step5
+
 - c: Getting data from server
+- 2.11 : The Phonebook Step6
+- 2.12*: Data for countries, step1
+- 2.13*: Data for countries, step2
+- 2.14*: Data for countries, step3
+
 - d: Altering data in server
+- 2.15 : Phonebook step7
+- 2.16 : Phonebook step8
+- 2.17 : Phonebook step9
+- 2.18*: Phonebook step10
+
 - e: Adding styles to React app
+- 2.19 : Phonebook step11
+- 2.20*: Phonebook step12
 
 ### Part 3: Programming a server with NodeJS and Express
 
@@ -69,6 +93,26 @@
 - b: Deploying app to internet
 - c: Saving data to MongoDB
 - d: Validation and ESLint
+- 3.1: Phonebook backend step1
+- 3.2: Phonebook backend step2
+- 3.3: Phonebook backend step3
+- 3.4: Phonebook backend step4
+- 3.5: Phonebook backend step5
+- 3.6: Phonebook backend step6
+- 3.7: Phonebook backend step7
+- 3.8*: Phonebook backend step8
+- 3.9 phonebook backend step9
+- 3.10 phonebook backend step10
+- 3.11 phonebook full stack
+- 3.15: Phonebook database, step3
+- 3.16: Phonebook database, step4
+- 3.17*: Phonebook database, step5
+- 3.18*: Phonebook database step6
+- 3.19*: Phonebook database, step7
+- 3.20*: Phonebook database, step8
+- 3.21 Deploying the database backend to production
+- 3.22: Lint configuration
+
 
 ### Part 4: Testing Express servers, user administration
 

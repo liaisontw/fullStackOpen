@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+- [anecdotes](https://fullstackopen.com/en/part1/a_more_complex_state_debugging_react_apps)
+   - 1.12*: anecdotes step1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+import { useState } from 'react'
 
-## Available Scripts
+>const App = () => {
+>
+>  const anecdotes = [
+>    'If it hurts, do it more often.',
+>
+>    'Adding manpower to a late software project makes it later!',
+>
+>    'The first 90 percent of the code accounts for the first 10 percent of the 
+>
+>development time...The remaining 10 percent of the code accounts for the other 90 
+>
+>percent of the development time.',
+>
+>    'Any fool can write code that a computer can understand. Good programmers write 
+>
+>code that humans can understand.',
+>
+>    'Premature optimization is the root of all evil.',
+>
+>    'Debugging is twice as hard as writing the code in the first place. Therefore, if 
+>
+>you write the code as cleverly as possible, you are, by definition, not smart enough 
+>
+>to debug it.',
+>
+>    'Programming without an extremely heavy use of console.log is same as if a doctor 
+>
+>would refuse to use x-rays or blood tests when diagnosing patients.'
+>
+>  ]
+>   
+>  const [selected, setSelected] = useState(0)
+>
+>  return (
 
-In the project directory, you can run:
+    <div>
+      {anecdotes[selected]}
+    </div>
 
-### `npm start`
+>   )
+>}
+>
+>export default App
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   - 1.13*: anecdotes step2
+   
+![Expand your application so that you can vote for the displayed anecdote.](./19a.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+>const voteAnecdote = () => {
+>
+>    const copy = [...points];
+>
+>    copy[selected] += 1;
+>
+>    setPoints(copy);
+>
+>    if ( copy[selected] > copy[highest] ) {
+>
+>      setHighest(selected);
+>
+>    }
+>
+>  };
+   - 1.14*: anecdotes step3
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![displays the anecdote with the largest number of votes.](./20a.png)

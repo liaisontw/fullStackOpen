@@ -1,5 +1,17 @@
 # [Fundamentals of Web apps](https://fullstackopen.com/en/part0/fundamentals_of_web_apps)
 
+### Part 0: Fundamentals of Web apps
+
+- a: General info
+- b: Fundamentals of Web apps
+- Exercises 0.1.-0.6.
+- 0.1  : HTML
+- 0.2  : CSS
+- 0.3  : HTML forms
+- 0.4  : New note
+- 0.5  : Single page app
+- 0.6  : New note
+
 ## 0.1: HTML
 
 Review the basics of HTML by reading this tutorial from Mozilla: [HTML tutorial](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
